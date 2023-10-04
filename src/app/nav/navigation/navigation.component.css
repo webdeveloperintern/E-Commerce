@@ -3,8 +3,6 @@ mat-toolbar{
     backdrop-filter: blur(3px);
     font-size: larger;
     padding: 3px;
-    position: fixed;
-    z-index: 100;
 }
 mat-form-field{
     border: none;
@@ -25,14 +23,6 @@ mat-form-field{
 {
     width: 80%;
     float: left;
-}
-.buttons{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items:end;
-    justify-content: end;
-    float: right;
-    padding: 10px;
 }
 mat-list{
     display: flex;

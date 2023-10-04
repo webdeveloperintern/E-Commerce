@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -14,14 +10,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
+import { NavRoutingModule } from './nav-routing.module';
+import { NavigationComponent } from './navigation/navigation.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent,
+    NavigationComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    NavRoutingModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
@@ -30,8 +29,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatFormFieldModule,
     MatListModule,
     MatTooltipModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class NavModule { }
