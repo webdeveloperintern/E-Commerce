@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { GadgethomeComponent } from './gadgethome/gadgethome.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'shop/home',pathMatch:'full'},
-  {path:'shop/home',component:GadgethomeComponent}
+  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'home',component:GadgethomeComponent}
 ];
 
 @NgModule({
