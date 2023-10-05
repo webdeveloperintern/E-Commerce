@@ -3,7 +3,7 @@ mat-toolbar{
     backdrop-filter: blur(3px);
     font-size: larger;
     padding: 3px;
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 9;
 }
