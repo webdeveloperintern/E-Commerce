@@ -2,4 +2,6 @@
 mat-grid-tile {
     background: lightblue;
   }
-
+  .home{
+    padding-top: 70px;
+  }
