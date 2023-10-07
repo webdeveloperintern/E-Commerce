@@ -7,7 +7,7 @@
             <div class="col-6 col-sm-6 col-md-6 col-lg-8 col-xl-8">
                 <span matPrefix> </span>
                 <form action=""><br>
-                <mat-form-field  >
+                <mat-form-field id="formfield" appearance="outline" >
                     <span matPrefix></span>
                     <input type="search" name="Search" id="" matInput placeholder="Search your Product...."  >
                     <mat-icon matSuffix >search</mat-icon>
@@ -25,7 +25,12 @@
             <!-- <button mat-icon-button><mat-icon > menu</mat-icon></button> -->
         </mat-toolbar-row>
         <div class="customer" *ngIf="toDisplay">
-            <button class="btn btn-warning">Continue</button>
+                <form formGroup ="LoginForm">
+                   
+                        <input  type="text" formControlName="email" placeholder="Your Registerd email">
+            <button class="btn btn-warning" type="submit" [disabled]="LoginForm.invalid">Continue</button>
+
+        </form>
         </div>
     </mat-toolbar>
 <router-outlet></router-outlet>

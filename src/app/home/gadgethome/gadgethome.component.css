@@ -4,19 +4,27 @@ mat-grid-tile {
   }
   .Product{
     padding: 10px 5px;
+    margin: auto;
   }
   .home{
     padding-top: 70px;
   }
-  :host /deep/ .mat-grid-tile-content{
+  /* :host /deep/ .mat-grid-tile-content{
     align-items: baseline;
   justify-content: start;
     flex-direction: column;
-  }
+  }*/
   .prds{
     height: 100%;
     width:100%;
     aspect-ratio: 3/2;
     object-fit:contain;
-    mix-blend-mode: color-burn;
+    /* mix-blend-mode: color-burn; */
+  } 
+  .carousel-item img{
+    border-top-right-radius: 45px;
+    border-top-left-radius: 45px;
+  }
+  .cards {
+    padding-top: 8px;
   }
