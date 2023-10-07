@@ -21,10 +21,24 @@ mat-grid-tile {
     object-fit:contain;
     /* mix-blend-mode: color-burn; */
   } 
+
   .carousel-item img{
     border-top-right-radius: 45px;
     border-top-left-radius: 45px;
   }
+
   .cards {
     padding-top: 8px;
+    display: flex;
+    flex-direction: row;
+  }
+.example-card{
+  border-radius: 5%;
+  background-color: #dfdfdf;
+}
+.example-card img{
+  mix-blend-mode:darken;
+}
+  .cards .example-card:hover{
+    box-shadow: 6px 5px 6px 5px  rgba(255, 217, 0, 0.315);
   }

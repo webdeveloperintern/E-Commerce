@@ -53,7 +53,7 @@ mat-list mat-list-item{
     position: fixed;
     box-shadow: 6px 5px 6px 5px whitesmoke;
     background:transparent;
-    backdrop-filter: blur(3.8px);
+    backdrop-filter: blur(4px);
     animation: myAnim 2s ease 0s 1 normal forwards;
 }
 @keyframes myAnim {
