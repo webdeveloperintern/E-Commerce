@@ -9,6 +9,7 @@ import {MatInputModule} from '@angular/material/input'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { NavRoutingModule } from './nav-routing.module';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -28,7 +29,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     MatInputModule,
     MatFormFieldModule,
     MatListModule,
-    MatTooltipModule
+    MatTooltipModule,MatBadgeModule
   ]
 })
 export class NavModule { }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DistributedserviceService } from 'src/app/Services/distributedservice.service';
 
 @Component({
   selector: 'gadgethome',
@@ -21,23 +23,31 @@ export class GadgethomeComponent implements OnInit {
      {'image':'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/b/0/s/16-s0095ax-gaming-laptop-hp-original-imagsn4eepm7trbu.jpeg?q=70','name':'HP Vitcus','price':'75000','class':'bi bi-currency-rupee',isFav:false,innerhtml:''}
     ]
     innerhtml = "favorite_border";
+    counter =0;
 
 
     like(index:number){
       // alert(index);
       if(this.products[index].isFav == true){
         this.products[index].isFav = false;
-        this.isFavorite();
+        this.products[index].innerhtml ="favorite_border";
+        this.counter--;
+        this.service.getbadge(this.counter);
+        this.route.navigateByUrl('nav');
+        alert(this.counter);
       }
       else
       {
         this.products[index].isFav = true;
-        this.isFavorite();
+        this.counter++;
+        this.products[index].innerhtml= "favorite"
+        alert(this.counter);
       }
     }
     isFavorite(){
       for (let index = 0; index < this.products.length; index++) {
         if(this.products[index].isFav == true){
+          this.counter++;
           this.products[index].innerhtml= "favorite";
 
         }
@@ -46,8 +56,13 @@ export class GadgethomeComponent implements OnInit {
           this.products[index].innerhtml ="favorite_border";
         }
       }
-    }
+      // alert(this.counter);
+      }
+    constructor(private service:DistributedserviceService,private route:Router){}
+
     ngOnInit(): void {
       this.isFavorite();
+      this.service.getbadge(this.counter);
+
         }
 }

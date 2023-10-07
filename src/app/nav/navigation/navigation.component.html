@@ -17,7 +17,7 @@
             <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2 ">
                 <mat-list >
                     <mat-list-item> <mat-icon matTooltip="Cart_Items">add_shopping_cart</mat-icon> </mat-list-item>
-                    <mat-list-item> <mat-icon matTooltip="Likes">favorite_border</mat-icon> </mat-list-item>
+                    <mat-list-item > <mat-icon  matTooltip="Likes" matBadge="{{badgecount}}" matBadgeSize="small" matBadgePosition="above after" > favorite_border</mat-icon> </mat-list-item>
                     <mat-list-item> <mat-icon matTooltip="Order_Status">location_on</mat-icon> </mat-list-item>
                     <mat-list-item> <mat-icon matTooltip="Sign_in" (click)="customer();">person</mat-icon> </mat-list-item>
                 </mat-list>

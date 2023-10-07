@@ -21,10 +21,17 @@ mat-grid-tile {
     object-fit:contain;
     /* mix-blend-mode: color-burn; */
   } 
+  .carousel-item{
+    height: 500px;
+  }
+
+  
 
   .carousel-item img{
     border-top-right-radius: 45px;
     border-top-left-radius: 45px;
+    height: 100% !important;
+    object-fit: cover;
   }
 
   .cards {
