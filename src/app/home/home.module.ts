@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { GadgethomeComponent } from './gadgethome/gadgethome.component';
+import { CommonModule } from '@angular/common';
 
 import {MatGridListModule} from '@angular/material/grid-list'
 
@@ -12,9 +12,8 @@ import {MatGridListModule} from '@angular/material/grid-list'
     GadgethomeComponent
   ],
   imports: [
-    CommonModule,
     HomeRoutingModule,
-    MatGridListModule
+    MatGridListModule,CommonModule
   ]
 })
 export class HomeModule { }
