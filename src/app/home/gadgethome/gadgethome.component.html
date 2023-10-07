@@ -27,12 +27,12 @@
     </div>
     <div class="Product">
     <mat-grid-list cols="4" rowHeight=".9:.9" [gutterSize]="'10px'">
-      <mat-grid-tile *ngFor="let product of products">
-        <div style="height: 60%;width:100%;padding: 5px;" >
-          <img style="height: 100%;width:100%;object-fit:cover;" src="{{product.src}}" alt="mom" srcset="">
+      <mat-grid-tile *ngFor="let product of products ">
+        <div style="height: 75%;width:100%;padding: 5px;" >
+          <img class="prds" src="{{product.src}}" alt="{{product.name}}" srcset="">   
         </div>
         <div>
-          <label>{{product.name}}</label>  
+          <h3>{{product.name}}</h3>  
         </div>
       </mat-grid-tile>
     </mat-grid-list>

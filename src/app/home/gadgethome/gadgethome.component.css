@@ -1,6 +1,6 @@
 
 mat-grid-tile {
-    background: lightblue;
+    background:lightblue ;
   }
   .Product{
     padding: 10px 5px;
@@ -12,4 +12,11 @@ mat-grid-tile {
     align-items: baseline;
   justify-content: start;
     flex-direction: column;
+  }
+  .prds{
+    height: 100%;
+    width:100%;
+    aspect-ratio: 3/2;
+    object-fit:contain;
+    mix-blend-mode: color-burn;
   }
