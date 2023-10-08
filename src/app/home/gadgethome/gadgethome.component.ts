@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DistributedserviceService } from 'src/app/Services/distributedservice.service';
-
+import { NavigationComponent } from 'src/app/nav/navigation/navigation.component';
 @Component({
   selector: 'gadgethome',
   templateUrl: './gadgethome.component.html',
@@ -32,9 +32,9 @@ export class GadgethomeComponent implements OnInit {
         this.products[index].isFav = false;
         this.products[index].innerhtml ="favorite_border";
         this.counter--;
-        this.service.getbadge(this.counter);
-        this.route.navigateByUrl('nav');
-        alert(this.counter);
+        //this.service.getbadge(this.counter);
+       // this.route.navigateByUrl('nav');
+        this.nav.badgecount = this.counter;
       }
       else
       {
@@ -42,6 +42,8 @@ export class GadgethomeComponent implements OnInit {
         this.counter++;
         this.products[index].innerhtml= "favorite"
         alert(this.counter);
+        this.nav.badgecount = this.counter;
+
       }
     }
     isFavorite(){
@@ -58,11 +60,15 @@ export class GadgethomeComponent implements OnInit {
       }
       // alert(this.counter);
       }
-    constructor(private service:DistributedserviceService,private route:Router){}
+    constructor(private service:DistributedserviceService,private route:Router,private nav:NavigationComponent){}
 
     ngOnInit(): void {
       this.isFavorite();
-      this.service.getbadge(this.counter);
+     // this.service.getbadge(this.counter);
 
         }
+
+
+
+
 }

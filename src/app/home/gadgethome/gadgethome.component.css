@@ -43,7 +43,7 @@ mat-grid-tile {
   padding-bottom: 5%;
 }
 .example-card img{
-  mix-blend-mode:darken;
+  mix-blend-mode:multiply;
   transition: .5s;
   cursor: pointer;
   mask: linear-gradient(135deg,rgba(0, 0, 0, 0.582) ,#000,rgba(0, 0, 0, 0.884) 60%)
@@ -55,6 +55,7 @@ mat-grid-tile {
   margin-top: -5px;
   mask-position: 0 0;
   /* transition: margin 0.5s ease-in-out; */
+  transform: scale(1.1);
 }
   .cards .example-card:hover{
     box-shadow: -6px 5px 6px 5px  rgba(187, 169, 68, 0.212);
