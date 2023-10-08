@@ -22,7 +22,7 @@ mat-grid-tile {
     /* mix-blend-mode: color-burn; */
   } 
   .carousel-item{
-    height: 500px;
+    height: 50vh !important;
   }
 
   .carousel-item img{
@@ -37,13 +37,14 @@ mat-grid-tile {
     display: flex;
     flex-direction: row;
   }
-.example-card{
+.product-card{
   border-radius: 5%;
-  background-color: #dfdfdf;
+  background-color: white;
   padding-bottom: 5%;
 }
-.example-card img{
+.product-card img{
   mix-blend-mode:multiply;
+  filter: contrast(1.2);
   transition: .5s;
   cursor: pointer;
   mask: linear-gradient(135deg,rgba(0, 0, 0, 0.582) ,#000,rgba(0, 0, 0, 0.884) 60%)
@@ -51,12 +52,12 @@ mat-grid-tile {
 
 }
 
-.example-card img:hover{
+.product-card img:hover{
   margin-top: -5px;
   mask-position: 0 0;
   /* transition: margin 0.5s ease-in-out; */
   transform: scale(1.1);
 }
-  .cards .example-card:hover{
+  .cards .product-card:hover{
     box-shadow: -6px 5px 6px 5px  rgba(187, 169, 68, 0.212);
   }

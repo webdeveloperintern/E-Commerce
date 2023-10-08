@@ -1,0 +1,26 @@
+<div class="customer">
+    <div>
+        <h1 mat-dialog-title>Sign in</h1>
+    </div>
+    <div mat-dialog-content >
+        <form [formGroup]="LoginForm">
+            <mat-form-field appearance="outline" *ngIf="!Hide"  >
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Email" >
+                <mat-error *ngIf="(this.LoginForm.controls['email'].dirty && this.LoginForm.controls['email'].dirty)&& this.LoginForm.controls['email'].hasError('email')">Enter valid E-mail</mat-error>
+                <mat-icon matSuffix>mail</mat-icon>
+                <mat-hint style="cursor: pointer;" (click)="Hide=!Hide">Sign in using PhoneNumber</mat-hint>
+              </mat-form-field>
+              <mat-form-field appearance="outline" *ngIf="Hide">
+                  <mat-label>Phone</mat-label>
+                  <input type="tel" matInput formControlName="phone" placeholder="Phone Number">
+                  <mat-error *ngIf="this.LoginForm.controls['phone'].touched && LoginForm.controls['phone'].dirty">Enter valid PhoneNumber</mat-error>
+                  <mat-icon matSuffix>phone</mat-icon>
+                  <mat-hint style="cursor: pointer;" (click)="Hide=!Hide">Sign in using Mail Id</mat-hint>
+                </mat-form-field>
+        </form>
+    </div>
+        <div mat-dialog-actions>
+            <button mat-button mat-dialog-close [disabled]="!LoginForm.valid">Close</button>
+        </div>
+</div>

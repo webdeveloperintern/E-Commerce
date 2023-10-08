@@ -10,14 +10,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
-
+import {MatDialog, MatDialogModule} from '@angular/material/dialog'
 import { NavRoutingModule } from './nav-routing.module';
-import { NavigationComponent } from './navigation/navigation.component';
-
+import { DialogElementsExampleDialog, NavigationComponent } from './navigation/navigation.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    NavigationComponent
+    NavigationComponent,DialogElementsExampleDialog
   ],
   imports: [
     CommonModule,
@@ -29,7 +29,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     MatInputModule,
     MatFormFieldModule,
     MatListModule,
-    MatTooltipModule,MatBadgeModule
+    MatTooltipModule,MatBadgeModule,MatDialogModule,ReactiveFormsModule
   ]
 })
 export class NavModule { }

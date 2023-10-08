@@ -41,7 +41,7 @@ export class GadgethomeComponent implements OnInit {
         this.products[index].isFav = true;
         this.counter++;
         this.products[index].innerhtml= "favorite"
-        alert(this.counter);
+        // alert(this.counter);
         this.nav.badgecount = this.counter;
 
       }
