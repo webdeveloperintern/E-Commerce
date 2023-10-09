@@ -352,4 +352,12 @@ mat-list mat-list-item{
   .list li.active {
     font-weight: bold !important;
   }
-  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+         -webkit-appearance: none;
+          margin: 0;
+  }
+
+  input[type=number] {
+      -moz-appearance: textfield;
+  }

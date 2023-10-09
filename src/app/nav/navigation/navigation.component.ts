@@ -47,14 +47,32 @@ export class DialogElementsExampleDialog {
 
 
   LoginForm !:FormGroup;
-  Hide:boolean = false;
-
+  Hide:boolean = true;
+  errormsg = '';
   constructor(private formbuilder:FormBuilder){
     this.LoginForm = this.formbuilder.group({
-      email: ['',[Validators.required,Validators.email]],
-      phone:['',[Validators.required]]
+      emailorphone: [''],
+      OTP:['']
     });
+    
   }
+  
 
+    ngOnInit(){
+      if (this.LoginForm.controls['emailorphone'].value.match(/^(\+)?([0-9]+)$/)) {
+      this.LoginForm.controls['emailorphone'].addValidators([Validators.required, Validators.maxLength(10),Validators.pattern('/^(\+)?([0-9]+)$/')]);
+      this.errormsg = 'Enater a valid Mobile Number';
+      this.LoginForm.controls['OTP'].addValidators(Validators.required)
+      } else {
+      this.LoginForm.controls['emailorphone'].addValidators([Validators.required, Validators.email]);
+      this.errormsg = 'Enater a valid email';
+      this.LoginForm.controls['OTP'].addValidators(Validators.required)
+      }
+      
+
+      
+    }
+    
+  
 
 }
