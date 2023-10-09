@@ -49,28 +49,39 @@ export class DialogElementsExampleDialog {
   LoginForm !:FormGroup;
   Hide:boolean = true;
   errormsg = '';
+  inputtype='text';
+  suffix='';
   constructor(private formbuilder:FormBuilder){
     this.LoginForm = this.formbuilder.group({
-      emailorphone: [''],
+      emailorphone: ['',Validators.required],
       OTP:['']
     });
     
   }
   
+  ngOnInit(){
+  }
 
-    ngOnInit(){
-      if (this.LoginForm.controls['emailorphone'].value.match(/^(\+)?([0-9]+)$/)) {
-      this.LoginForm.controls['emailorphone'].addValidators([Validators.required, Validators.maxLength(10),Validators.pattern('/^(\+)?([0-9]+)$/')]);
-      this.errormsg = 'Enater a valid Mobile Number';
-      this.LoginForm.controls['OTP'].addValidators(Validators.required)
-      } else {
-      this.LoginForm.controls['emailorphone'].addValidators([Validators.required, Validators.email]);
-      this.errormsg = 'Enater a valid email';
-      this.LoginForm.controls['OTP'].addValidators(Validators.required)
+    change(){
+      if(this.LoginForm.controls['emailorphone'].value != ' '){
+        if (this.LoginForm.controls['emailorphone'].value.match(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/)) {
+          this.inputtype='tel';
+          this.suffix='phone'
+          this.LoginForm.controls['emailorphone'].addValidators([Validators.pattern(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/)]);
+          // this.errormsg = 'Enater a valid Mobile Number';
+          console.log(this.LoginForm.controls['emailorphone'].value)
+          // alert(this.LoginForm.controls['emailorphone'].value);
+          // this.LoginForm.controls['OTP'].addValidators(Validators.required)
+          } 
+          else {
+          this.inputtype='email';
+          this.suffix='mail';
+          this.LoginForm.controls['emailorphone'].addValidators([Validators.email]);
+          this.errormsg = 'Enater a valid email';
+          this.LoginForm.controls['OTP'].addValidators(Validators.required);
+          // alert(this.LoginForm.controls['emailorphone'].value);
+          }
       }
-      
-
-      
     }
     
   
