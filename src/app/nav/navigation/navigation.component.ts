@@ -68,8 +68,7 @@ export class DialogElementsExampleDialog {
           console.log("pattern added");
           this.LoginForm.controls['emailorphone'].setValidators([Validators.pattern(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/),Validators.minLength(10)]);
           this.LoginForm.controls['emailorphone'].removeValidators([Validators.email]);
-          // if(this.LoginForm.valid) this.Hide =!this.Hide;
-          if(this.LoginForm.controls['emailorphone'].hasError('Pattern')) this.errormsg = 'Enter a Valid MobileNumber';
+          if((this.LoginForm.controls['text'].touched && this.LoginForm.controls['text'].dirty) && this.LoginForm.controls['text'].hasError('pattern')) this.errormsg = 'Enter a valid Number';
           console.log("email removed");
       }
       else {
@@ -81,7 +80,8 @@ export class DialogElementsExampleDialog {
         this.LoginForm.controls['emailorphone'].removeValidators([Validators.pattern(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/)]);
         // if(this.LoginForm.valid) this.Hide =!this.Hide;
         console.log("patternremoved");
-        // else this.LoginForm.controls['emailorphone'].removeValidators(Validators.email);
+        if((this.LoginForm.controls['text'].touched && this.LoginForm.controls['text'].dirty) && this.LoginForm.controls['text'].hasError('email')) this.errormsg = 'Enter a valid Email';
+          
       }
     }
     else{
