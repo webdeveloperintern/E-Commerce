@@ -14,6 +14,7 @@ import {MatDialog, MatDialogModule} from '@angular/material/dialog'
 import { NavRoutingModule } from './nav-routing.module';
 import { DialogElementsExampleDialog, NavigationComponent } from './navigation/navigation.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     MatListModule,
-    MatTooltipModule,MatBadgeModule,MatDialogModule,ReactiveFormsModule
-  ]
+    MatTooltipModule,MatBadgeModule,MatDialogModule,ReactiveFormsModule,HttpClientModule
+  ],
+  providers:[]
 })
 export class NavModule { }

@@ -54,7 +54,7 @@ export class DialogElementsExampleDialog {
   constructor(private formbuilder:FormBuilder){
     this.LoginForm = this.formbuilder.group({
       emailorphone: ['',Validators.required],
-      OTP:['']
+      OTP:['',Validators.required]
     });
     
   }
@@ -68,7 +68,7 @@ export class DialogElementsExampleDialog {
           console.log("pattern added");
           this.LoginForm.controls['emailorphone'].setValidators([Validators.pattern(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/),Validators.minLength(10)]);
           this.LoginForm.controls['emailorphone'].removeValidators([Validators.email]);
-          if(this.LoginForm.valid) this.Hide =!this.Hide;
+          // if(this.LoginForm.valid) this.Hide =!this.Hide;
           if(this.LoginForm.controls['emailorphone'].hasError('Pattern')) this.errormsg = 'Enter a Valid MobileNumber';
           console.log("email removed");
       }
@@ -79,7 +79,7 @@ export class DialogElementsExampleDialog {
         this.LoginForm.controls['emailorphone'].setValidators([Validators.email,Validators.minLength(10)]);
         if(this.LoginForm.controls['emailorphone'].hasError('email')){this.errormsg = 'Enater a valid email';}
         this.LoginForm.controls['emailorphone'].removeValidators([Validators.pattern(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/)]);
-        if(this.LoginForm.valid) this.Hide =!this.Hide;
+        // if(this.LoginForm.valid) this.Hide =!this.Hide;
         console.log("patternremoved");
         // else this.LoginForm.controls['emailorphone'].removeValidators(Validators.email);
       }
