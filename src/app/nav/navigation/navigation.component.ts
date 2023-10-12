@@ -60,6 +60,10 @@ export class DialogElementsExampleDialog {
     
   }
   change(){
+
+    if( this.LoginForm.controls['emailorphone'].value ===''){
+      this.suffix='';
+    }
     if(this.LoginForm.controls['emailorphone'].value != ' '){
       
       if(this.LoginForm.controls['emailorphone'].value.match(/^(?!(\d)\1+$)(?:\(?\+[\d{1,3}]\)?[- ]?|0)?[0-9]*$/)){
@@ -87,7 +91,8 @@ export class DialogElementsExampleDialog {
       }
     }
     else{
-      this.LoginForm.invalid;
+      this.suffix = ' ';
+      this.LoginForm.reset();
     }
   }
 
