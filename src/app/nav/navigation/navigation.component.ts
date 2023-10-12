@@ -49,6 +49,7 @@ export class DialogElementsExampleDialog {
   LoginForm !:FormGroup;
   Hide:boolean = true;
   errormsg = '';
+  // hint = "example: +00123456789/123456789"
   inputtype = 'email';
   suffix='';
   constructor(private formbuilder:FormBuilder){
@@ -61,7 +62,7 @@ export class DialogElementsExampleDialog {
   change(){
     if(this.LoginForm.controls['emailorphone'].value != ' '){
       
-      if(this.LoginForm.controls['emailorphone'].value.match(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/)){
+      if(this.LoginForm.controls['emailorphone'].value.match(/^(?!(\d)\1+$)(?:\(?\+[\d{1,3}]\)?[- ]?|0)?[0-9]*$/)){
         // console.log(this.LoginForm.controls['emailorphone'].value);
           this.inputtype='text';
           this.suffix='phone';
@@ -69,6 +70,7 @@ export class DialogElementsExampleDialog {
           this.LoginForm.controls['emailorphone'].setValidators([Validators.pattern(/^(?!(\d)\1+$)(?:\(?\+\d{1,3}\)?[- ]?|0)?\d{10}$/),Validators.minLength(10)]);
           this.LoginForm.controls['emailorphone'].removeValidators([Validators.email]);
           if((this.LoginForm.controls['text'].touched && this.LoginForm.controls['text'].dirty) && this.LoginForm.controls['text'].hasError('pattern')) this.errormsg = 'Enter a valid Number';
+          // if((this.LoginForm.controls['text'].touched && this.LoginForm.controls['text'].dirty) && this.LoginForm.controls['text'].hasError('pattern')) this.hint
           console.log("email removed");
       }
       else {

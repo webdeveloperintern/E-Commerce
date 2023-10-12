@@ -6,6 +6,7 @@
         <form [formGroup]="LoginForm">
             <mat-form-field appearance="outline" *ngIf="Hide"   >
                 <mat-label>Email/Phone</mat-label>
+                <!-- <mat-hint *ngIf="inputtype === 'text'">{{hint}}</mat-hint> -->
                 <input type="{{inputtype}}" matInput formControlName="emailorphone" minlength="10" autocomplete="email" placeholder="Email/Phone" (input)="change()">
                 <mat-icon matSuffix>{{suffix}}</mat-icon>
                 <mat-error>{{errormsg}}</mat-error>
