@@ -362,13 +362,13 @@ mat-list mat-list-item{
       -moz-appearance: textfield;
   }
   .profileimage{
-    width: 150px;
-    height: 159px;
+    width: auto;
+    height: auto;
     border-radius: 50%;
     background-color: blueviolet;
-    font-size: 35px;
+    font-size: 1.2em;
     color: white;
     text-align: center;
-    line-height: 150px;
-    margin: 20px 0;
+    line-height: 150%;
+    
   }
