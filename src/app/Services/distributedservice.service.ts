@@ -16,7 +16,7 @@ export class DistributedserviceService {
 
  getproducts():Observable<Product[]>{
   
-  return this.http.get<Product[]>("https://dummyjson.com/products");
+  return this.http.get<Product[]>(this.fakestore+'/products');
  }  
 
   getbadge(num:any){

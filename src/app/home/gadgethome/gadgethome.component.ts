@@ -30,7 +30,7 @@ export class GadgethomeComponent implements OnInit {
     innerhtml = "favorite_border";
     counter =0;
     Pagination: number = 1;
-
+    size =0;
 
 
     // like(index:number){
@@ -74,6 +74,7 @@ export class GadgethomeComponent implements OnInit {
      //this.service.getbadge(this.counter);
      this.service.getproducts().subscribe((product:any)=>{
       this.products = product.products
+      this.size = this.products.length
       console.log(product.products.length);});
     }
 

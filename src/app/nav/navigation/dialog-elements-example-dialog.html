@@ -7,10 +7,10 @@
             <mat-form-field appearance="outline" *ngIf="Hide"   >
                 <mat-label>Email/Phone</mat-label>
                 <!-- <mat-hint *ngIf="inputtype === 'text'">{{hint}}</mat-hint> -->
-                <input type="{{inputtype}}" matInput formControlName="emailorphone" minlength="10" autocomplete="email" placeholder="Email/Phone" (input)="change()">
+                <input type="{{inputtype}}" matInput formControlName="emailorphone" minlength="10" autocomplete="email" placeholder="Email/Phone"  (input)="change()">
                 <mat-icon matSuffix>{{suffix}}</mat-icon>
                 <mat-error>{{errormsg}}</mat-error>
-                <mat-hint><button mat-button style="cursor: pointer;" (click)="Hide=!Hide"[disabled]="LoginForm.invalid" > Continue</button></mat-hint>
+                <mat-hint><button mat-button type="submit" style="cursor: pointer;" (click)="Hide=!Hide" *ngIf="LoginForm.controls['emailorphone'].valid && Hide" > Continue</button></mat-hint>
                 
               </mat-form-field>
               <!-- <mat-form-field appearance="outline" *ngIf="Hide">
@@ -22,9 +22,9 @@
                 </mat-form-field> -->
                 <mat-form-field appearance="outline" *ngIf="!Hide">
                     <mat-label>One Time Password</mat-label>
-                    <input type="number" matInput formControlName="OTP"  placeholder="Enter the OTP recivied in your Mail/PhoneNumber">
+                    <input type="text" matInput formControlName="OTP"  placeholder="Enter the OTP recivied in your Mail/PhoneNumber">
                     <mat-error >Enter valid PhoneNumber</mat-error>
-                    <mat-icon matSuffix>phone</mat-icon><mat-hint><button mat-button style="cursor: pointer;" (click)="Hide=!Hide"> <-- Back</button></mat-hint>
+                    <mat-hint><button mat-button style="cursor: pointer;" (click)="Hide=!Hide"> <-- Back</button></mat-hint>
                   </mat-form-field>
         </form>
             </div>

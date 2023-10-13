@@ -361,3 +361,14 @@ mat-list mat-list-item{
   input[type=number] {
       -moz-appearance: textfield;
   }
+  .profileimage{
+    width: 150px;
+    height: 159px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    line-height: 150px;
+    margin: 20px 0;
+  }
